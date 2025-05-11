@@ -4,8 +4,9 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: "/demo2",
   build: {
-    base: "/repo-name/",
+  
     // 基础配置
     outDir: 'dist',           // 输出目录（默认 dist）
     assetsDir: 'assets',       // 静态资源存放目录（相对于 outDir）
