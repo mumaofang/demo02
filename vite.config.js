@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite'
+import legacy from '@vitejs/plugin-legacy'
 import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-  base: "/demo2",
+  plugins: [
+    vue(),
+    legacy({
+      targets: ['defaults', 'not IE 11']
+    })
+  ],
+  base: "/demo02/",
   build: {
   
     // 基础配置
