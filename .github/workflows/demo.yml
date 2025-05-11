@@ -1,11 +1,14 @@
+name: 测试github工作流
 on: push
 
 jobs: 
   npm-build:
+    name: npm-build开始工作
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - run: pwd
-    - run: npm --version
-    - run: npm install
-    - run: npm run build
+    - name: 读取仓库内容
+      uses: actions/checkout@v4
+    - name: 安装依赖
+      run: npm install
+    - name: 打包
+      run: npm run build
